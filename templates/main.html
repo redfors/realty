@@ -1,0 +1,279 @@
+{% load static %}
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Slovenia-realty</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico">
+
+    <!-- CSS
+	============================================ -->
+
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="{% static 'css/plugins.css' %}">
+    <!-- Main Style CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+
+<body>
+
+
+<!-- Header Section Start -->
+
+<header class="header-wrapper section">
+    <div class="header-top bg-theme-two section border-bm-1" style="display: none;">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-6">
+                    <div class="header-top-info">
+                        <p class="text-white">Call us - <a href="tel:21548987658">21548 987 658</a></p>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-md-6">
+                    <div class="header-buttons">
+                        <a class="header-btn btn" href="add-property.html">Add Property</a>
+                        <a class="header-btn btn-border" href="register.html">Register</a>
+                        <a class="header-btn text-white" href="login.html">Login</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="header-section section bg-theme-two">
+        <div class="container">
+            <div class="row align-items-center">
+
+                <div class="col-lg-2 col-6">
+                    <div class="header-logo">
+                        <a href="{% url 'index' %}"><img src="{% static 'images/logo-2.png' %}" style="max-width: 200%" alt=""></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-10 col-6">
+                    <div class="header-mid_right-bar">
+                        <nav class="main-menu text-white d-lg-block d-none">
+                            <ul>
+                                <li class="has-dropdown"><a href="#">Недвижимость</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="{% url 'catalog' %}">Каталог</a></li>
+                                        <li><a href="{% url 'search' %}">Поиск</a></li>
+                                        <li><a href="{% url 'request' %}">Оставить заявку</a></li>
+                                    </ul>
+                                </li>
+                                <li class="has-dropdown"><a href="#">Услуги</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="{% url 'create' %}">Открытие компании</a></li>
+                                        <li><a href="{% url 'permission' %}">Получение ВНЖ</a></li>
+                                        <li><a href="{% url 'insurance' %}">Страхование</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Аренда</a>
+                                <ul class="sub-menu">
+                                    <li><a href="{% url 'i_rent' %}">Снять</a></li>
+                                    <li><a href="{% url 'for_rent' %}">Сдать</a></li>
+                                </ul>
+                                </li>
+                                <li class="has-dropdown"><a href="{% url 'for_sale' %}">Продать</a></li>
+                                <li class="has-dropdown"><a href="#">Блог</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="{% url 'company' %}">О нас</a></li>
+                                        <li><a href="{% url 'slovenia' %}">О Словении</a></li>
+                                        <li><a href="{% url 'news' %}">Новости</a></li>
+                                        <li><a href="{% url 'faq' %}">F.A.Q.</a></li>
+                                    </ul>
+                                </li>
+
+                                <li><a href="{% url 'contacts' %}">Контакты</a></li>
+                            </ul>
+                        </nav>
+
+                    </div>
+                </div>
+
+                <!-- Mobile Menu -->
+                <div class="mobile-menu white-m-bar order-12 d-block d-lg-none col"></div>
+
+            </div>
+        </div>
+    </div><!-- Header Section End -->
+</header>
+
+<!--  search overlay -->
+<div class="search-overlay" id="search-overlay">
+
+    <div class="search-overlay__header">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-md-6 ml-auto col-4">
+                    <!-- search content -->
+                    <div class="search-content text-right">
+                        <span class="mobile-navigation-close-icon" id="search-close-trigger"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="search-overlay__inner">
+        <div class="search-overlay__body">
+            <div class="search-overlay__form">
+                <form action="#">
+                    <input type="text" placeholder="Search">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End of search overlay -->
+
+<!-- start: Content -->
+{% block content %}
+{% endblock %}
+<!-- end: Content -->
+
+<!-- Footer Section Start -->
+<footer class="footer-section section ">
+
+    <div class="footer-top bg-theme-two pt-70 pt-md-50 pt-sm-30 pt-xs-20 pb-100 pb-md-90 pb-sm-70 pb-xs-60">
+        <div class="container">
+            <div class="row">
+                <div class="col-coustom-3 col-md-6 col-lg-3 col-12 mt-40">
+                    <!-- Footer-widget Start -->
+                    <div class="footer-widget">
+                        <div class="footer-title">
+                            <h3>About</h3>
+                        </div>
+                        <div class="footer-info">
+                            <p>Ortiz is the best and popular real estate to you how all this mistaolt cing pleasure and
+                                praising ained wasnad pain was prexplain</p>
+                            <div class="newsletter-box">
+
+                                <form id="mc-form" class="mc-form footer-newsletter">
+                                    <input id="mc-email" type="email" autocomplete="off"
+                                           placeholder="Email for Newsletter"/>
+                                    <button id="mc-submit"><i class="fa fa-paper-plane"></i></button>
+                                </form>
+                            </div>
+
+                            <!-- mailchimp-alerts Start -->
+                            <div class="mailchimp-alerts text-centre">
+                                <div class="mailchimp-submitting"></div><!-- mailchimp-submitting end -->
+                                <div class="mailchimp-success"></div><!-- mailchimp-success end -->
+                                <div class="mailchimp-error"></div><!-- mailchimp-error end -->
+                            </div><!-- mailchimp-alerts end -->
+                        </div>
+                    </div><!-- Footer-widget End -->
+                </div>
+                <div class="col-coustom-3 col-md-6 col-lg-3 col-12 mt-40">
+                    <!-- Footer-widget Start -->
+                    <div class="footer-widget">
+                        <div class="footer-title">
+                            <h3>Popular Post</h3>
+                        </div>
+                        <div class="footer-info">
+                            <div class="single-list">
+                                <h4>Duplex Villa Design</h4>
+                                <p>Lorem ipsum dolor sit amet, tur acinglit sed do eius </p>
+                            </div>
+                            <div class="single-list">
+                                <h4>Duplex Villa Design</h4>
+                                <p>Lorem ipsum dolor sit amet, tur acinglit sed do eius </p>
+                            </div>
+                        </div>
+                    </div><!-- Footer-widget End -->
+                </div>
+                <div class="col-coustom-3 col-md-6 col-lg-3 col-12 mt-40">
+                    <!-- Footer-widget Start -->
+                    <div class="footer-widget">
+                        <div class="footer-title">
+                            <h3>Quick Link</h3>
+                        </div>
+                        <div class="footer-info">
+                            <ul class="footer-list">
+                                <li><a href="service.html">Sercives</a></li>
+                                <li><a href="agent.html">Agent</a></li>
+                                <li><a href="properties.html">Properties</a></li>
+                                <li><a href="features.html">Features</a></li>
+                                <li><a href="blog.html">From Blog</a></li>
+                                <li><a href="contact-us.html">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div><!-- Footer-widget End -->
+                </div>
+                <div class="col-coustom-3 col-md-6 col-lg-3 col-12 mt-40">
+                    <!-- Footer-widget Start -->
+                    <div class="footer-widget">
+                        <div class="footer-title">
+                            <h3>Contact Us</h3>
+                        </div>
+                        <div class="footer-info">
+                            <ul class="footer-list">
+                                <li>
+                                    <div class="contact-text">
+                                        <i class="glyph-icon flaticon-placeholder"></i>
+                                        <p>256, 1st AVE, Manchester <br>125 , Noth England</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="contact-text">
+                                        <i class="glyph-icon flaticon-call"></i>
+                                        <p>
+                                            <span>Telephone : <a href="tel:1234566789"> +88 (012) 356 958 45</a></span>
+                                            <span>Telephone : <a href="tel:1234566789"> +88 (012) 356 958 45</a></span>
+                                        </p>
+
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="contact-text">
+                                        <i class="glyph-icon flaticon-earth"></i>
+                                        <p>
+                                            <span>Email : <a href="mailto:info@example.com">info@example.com</a></span>
+                                            <span>Web : <a href="https://hasthemes.com/">www.example.com</a></span>
+                                        </p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div><!-- Footer-widget End -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; redF <a href="#">All rights reserved.</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</footer><!-- Footer Section End -->
+
+
+<!-- JS
+============================================ -->
+
+<!-- Map js code here -->
+
+<!-- Plugins JS -->
+<script src="{% static 'js/plugins.js' %}"></script>
+<!-- Map Active JS -->
+<script src="{%  static 'js/maplace-active.js' %}"></script>
+<!-- Main JS -->
+<script src="{%  static 'js/main.js' %}"></script>
+
+
+</body>
+
+</html>

@@ -36,6 +36,21 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'homepage.apps.HomepageConfig',
+    'catalog.apps.CatalogConfig',
+    'search.apps.SearchConfig',
+    'request.apps.RequestConfig',
+    'create.apps.CreateConfig',
+    'permission.apps.PermissionConfig',
+    'insurance.apps.InsuranceConfig',
+    'i_rent.apps.I_rentConfig',
+    'for_rent.apps.For_rentConfig',
+    'for_sale.apps.For_saleConfig',
+    'company.apps.CompanyConfig',
+    'slovenia.apps.SloveniaConfig',
+    'news.apps.NewsConfig',
+    'faq.apps.FaqConfig',
+    'contacts.apps.ContactsConfig',
 ]
 
 MIDDLEWARE = [
@@ -129,3 +144,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'assets')]
