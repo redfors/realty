@@ -16,8 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+admin.site.site_header = 'Slovenia-realty admin'
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('ckeditor/', include('ckeditor_uploader.urls')),
     path('catalog/', include('catalog.urls')),
     path('search/', include('search.urls')),
     path('request/', include('request.urls')),
@@ -32,6 +35,7 @@ urlpatterns = [
     path('news/', include('news.urls')),
     path('faq/', include('faq.urls')),
     path('contacts/', include('contacts.urls')),
+    path('realty_details/', include('realty_details.urls')),
     path('', include('homepage.urls')),
     path('index/', include('homepage.urls')),
 ]

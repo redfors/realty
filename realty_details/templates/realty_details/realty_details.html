@@ -1,0 +1,189 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+
+
+    <style type="text/css">
+        .map-container-7 {
+            overflow: hidden;
+            padding-bottom: 56.25%;
+            position: relative;
+            height: 0;
+        }
+
+        .map-container-7 iframe {
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+        }
+
+
+    </style>
+    <script>
+        (function (exports) {
+            "use strict";
+
+            function initMap() {
+                exports.map = new google.maps.Map(document.getElementById("map"), {
+                    center: {
+                        lat: -34.397,
+                        lng: 150.644
+                    },
+                    zoom: 8
+                });
+            }
+
+            exports.initMap = initMap;
+        })((this.window = this.window || {}));
+
+
+    </script>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb-area section" style="background-image: url({% static 'images/bg/breadcrumb.jpg' %})">
+        <div class="container">
+            <div class="breadcrumb pt-75 pb-75 pt-sm-70 pb-sm-40 pt-xs-70 pb-xs-40">
+                <div class="row">
+                    <div class="col">
+                        <h2>Blog Details</h2>
+                        <!-- breadcrumb-list start -->
+                        <ul class="breadcrumb-list">
+                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                            <li class="breadcrumb-item active">Blog Details</li>
+                        </ul>
+                        <!-- breadcrumb-list end -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--// Breadcrumb -->
+
+    <!-- Page Conttent -->
+    <main class="page-content section">
+        <!-- Blog Grids Area -->
+        <div class="blog-grids-area pt-80 pt-md-60 pt-sm-40 pt-xs-30 pb-110 pb-md-90 pb-sm-70 pb-xs-60">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-lg-8 order-lg-1 order-1">
+
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="blog-details-warpper">
+                                    <div class="details-image mt-30">
+                                        <img src="/static/{{ data_realty.image }}" alt="">
+                                    </div>
+                                    <div class="details-contents-wrap">
+
+
+                                        <h3>{{ data_realty.name }}</h3>
+                                        <p><span>{{ data_realty.created }}</span></p>
+
+                                        <p>{{ data_realty.description|safe }}</p>
+
+                                        <blockquote class="blockquote">
+                                            {{ data_realty.description_data|safe }}
+                                        </blockquote>
+
+                                        <p>{{ data_realty.description_details|safe }}</p>
+                                        <blockquote class="blockquote">
+                                            {{ data_realty.place|safe }}
+                                        </blockquote>
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-4  order-lg-2 order-2">
+
+                        <div class="row widgets right-sidebar">
+
+                            <div class="col-lg-12">
+                                <div class="single-widget widget-categories mb-25">
+                                    <h4 class="widget-title">
+                                        <span>Подробно</span>
+                                    </h4>
+                                    <ul>
+                                        <li><a class="categories-name">Код <span>{{ data_realty.code }}</span></a></li>
+                                        <li><a class="categories-name">Тип<span>{{ data_realty.type }}</span></a></li>
+                                        <li><a class="categories-name">Площадь<span>{{ data_realty.area }}</span></a>
+                                        </li>
+                                        <li><a class="categories-name">Стоимость<span>{{ data_realty.price }}</span></a>
+                                        </li>
+                                        <li><a class="categories-name">Количество
+                                            комнат<span>{{ data_realty.rooms }}</span></a>
+                                        </li>
+                                        <li><a class="categories-name">Дата
+                                            посторойки<span>{{ data_realty.buiding }}</span></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Many photos -->
+                            <div class="col-lg-12">
+                                <div class="single-widget widget-newsletter">
+                                    <h4 class="widget-title">
+                                        <span>Фото</span>
+                                    </h4>
+                                    {% for image in images %}
+                                    <div class="details-image mt-30">
+                                        <img src="/static/{{ image.image }}" alt="">
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            <!-- Many tags -->
+                            <div class="col-lg-12">
+                                <div class="single-widget widget-newsletter">
+                                    <h4 class="widget-title">
+                                        <span>Тэги</span>
+                                    </h4>
+                                    <div class="tag">
+                                        <a href="#">Недвижимость</a>
+                                        <a href="#">Дом</a>
+                                        <a href="#">Квартира</a>
+                                        <a href="#">Вилла</a>
+                                        <a href="#">Собственность</a>
+                                        <a href="#">Продажа</a>
+                                        <a href="#">Риэлтор</a>
+                                        <a href="#">Агент</a>
+                                        <a href="#">Агенство</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-8" style="margin-top: 20px;">
+
+                        <div class="embed-responsive embed-responsive-21by9">
+                            <div id="googleMap-2" class="embed-responsive-item googleMap-2"
+                                 data-lat="{{ data_realty.lat }}"
+                                 data-Long="{{ data_realty.long }}"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <!--// Blog Grids Area -->
+    </main>
+    <!--// Page Conttent -->
+
+    <!-- Map js code here -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDzvwZpnYIGDDkwxM7fNQX6B1O0YmSwk5g"></script>
+
+{% endblock %}

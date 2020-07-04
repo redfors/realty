@@ -337,18 +337,18 @@ $('.nice-select').niceSelect()
 $('#price-range').slider({
     range: true,
     min: 0,
-    max: 2000000,
-    step: 1000,
-    values: [0, 500000],
+    max: 20000,
+    step: 10,
+    values: [2400, 10320],
    slide: function( event, ui ) {
     
-	$('.ui-slider-handle:eq(0)').html( '<span>' + '€' + ui.values[ 0 ] + '</span>');
-	$('.ui-slider-handle:eq(1)').html( '<span>' + '€' + ui.values[ 1 ] + '</span>');
+	$('.ui-slider-handle:eq(0)').html( '<span>' + '$' + ui.values[ 0 ] + '</span>');
+	$('.ui-slider-handle:eq(1)').html( '<span>' + '$' + ui.values[ 1 ] + '</span>');
     
    }
 });
-$('.ui-slider-handle:eq(0)').html( '<span>' + '€' + $( "#price-range" ).slider( "values", 0 ) + '</span>' );
-$('.ui-slider-handle:eq(1)').html( '<span>' + '€' + $( "#price-range" ).slider( "values", 1 ) + '</span>' );
+$('.ui-slider-handle:eq(0)').html( '<span>' + '$' + $( "#price-range" ).slider( "values", 0 ) + '</span>' );
+$('.ui-slider-handle:eq(1)').html( '<span>' + '$' + $( "#price-range" ).slider( "values", 1 ) + '</span>' );    
     
  
     
