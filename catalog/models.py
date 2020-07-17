@@ -1,8 +1,8 @@
 from django.contrib.postgres.fields import JSONField
 from django.db import models
 from django.urls import reverse
-
 from profiles.models import Profile
+from django_google_maps import fields as map_fields
 
 
 # Create your models here.
@@ -19,8 +19,6 @@ class StatusesRealty(models.Model):
         verbose_name_plural = """statuses"""
 
 
-
-
 class Realty(models.Model):
     STATUS_CHOICES = (
         ('draft', 'Draft'),
@@ -34,18 +32,17 @@ class Realty(models.Model):
     description_data = models.TextField("Description data")
     description_details = models.TextField("Detailed description")
     place = models.TextField("Object location")
-    # google_map_data = JSONField("Data location", null=True)
-    lat = models.FloatField("Latitude", max_length=50)
-    long = models.FloatField("Longitude", max_length=50)
+    address = map_fields.AddressField(max_length=200, default='Любляна')
+    geolocation = map_fields.GeoLocationField(max_length=100, default='46.05187370933915,14.506043267333983')
     code = models.CharField("Code", max_length=50)
     type = models.CharField("Type", max_length=255)
-    area = models.IntegerField("Area")
-    floor_number = models.IntegerField("Floor number")
-    namber_of_floors = models.IntegerField("Namber of floors")
-    price = models.IntegerField("Price")
-    buiding = models.IntegerField("Buiding")
-    adaptation = models.IntegerField("Adaptation")
-    rooms = models.IntegerField("Rooms")
+    area = models.CharField("Area", max_length=255)
+    floor_number = models.CharField("Floor number", max_length=255)
+    namber_of_floors = models.CharField("Namber of floors", max_length=255)
+    price = models.CharField("Price", max_length=255)
+    buiding = models.CharField("Buiding", max_length=255)
+    adaptation = models.CharField("Adaptation", max_length=255)
+    rooms = models.CharField("Rooms", max_length=255)
     garage = models.BooleanField("Garage")
     pool = models.BooleanField("Pool")
     furniture = models.BooleanField("Furniture")

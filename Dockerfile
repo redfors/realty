@@ -16,6 +16,7 @@ RUN apk update \
 RUN pip install --upgrade pip
 COPY ./requirements.txt /usr/src/app/requirements.txt
 RUN pip install -r requirements.txt
+RUN pip install -U googlemaps
 RUN apk --update add build-base jpeg-dev zlib-dev
 RUN python3 -m pip install --upgrade pip
 RUN python3 -m pip install --upgrade Pillow

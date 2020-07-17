@@ -54,6 +54,8 @@ INSTALLED_APPS = [
     'profiles',
     'realty_details.apps.Realty_detailsConfig',
     'django.contrib.humanize',
+    'django_google_maps',
+    'googlemaps',
 
 ]
 
@@ -156,3 +158,5 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'assets')]
 CKEDITOR_UPLOAD_PATH = "uploads/"
 CKEDITOR_BASEPATH = "/static/ckeditor/ckeditor/"
 
+# django_google_maps
+GOOGLE_MAPS_API_KEY = 'AIzaSyBDkNtcMr-dFiBCWGsT-hqO5M4FmhV1XOU'

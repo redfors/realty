@@ -1,10 +1,11 @@
 from django import forms
 from django.contrib import admin
-
-
 from .models import Realty, StatusesRealty, Images
 from django.utils.safestring import mark_safe
 from ckeditor_uploader.widgets import CKEditorUploadingWidget
+from django_google_maps import widgets as map_widgets
+from django_google_maps import fields as map_fields
+
 
 
 class RealtyAdminForm(forms.ModelForm):
@@ -31,6 +32,11 @@ class RealtyAdmin(admin.ModelAdmin):
     save_as = True
     inlines = [RealtyInline]
     form = RealtyAdminForm
+    formfield_overrides = {
+        map_fields.AddressField: {'widget':
+            map_widgets.GoogleMapsAddressWidget(attrs={
+                'data-map-type': 'roadmap'})}}
+    save_on_top = True
 
     def get_image(self, obj):
         return mark_safe(f'<img src=/static/{obj.image.url} width="50" height="60"')
